@@ -1,9 +1,0 @@
-.text-block {
-  display: inline-block;
-  width: fit-content;
-}
-
-.char {
-  will-change: transform;
-  display: inline-block;
-}

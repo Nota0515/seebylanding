@@ -1,8 +1,8 @@
 import { navLinks } from '@/constants'
 import PixelBlast from '../ui/PixelBast'
 import ShinyText from '../ui/shinytext';
-import ScrambledText from '../ui/ScrambledText';
 import LightRays from '../ui/LightRays';
+import GlowText from "@/cuicui/other/font-effects/glow-text/glow-text";
 
 
 const Home = () => {
@@ -58,9 +58,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-center z-10 items-center mx-auto mt-16 max-w-4xl'>
-        <div className='maintitlediv flex justify-center items-center flex-col'>
-          <div className='introducing'>
+      <div className='flex justify-center z-10 items-center mt-16'>
+        <div className='maintitlediv flex justify-center w-full items-center flex-col'>
+          <div className='flex introducing'>
             <ShinyText
               text="Introducing 🎉"
               disabled={false}
@@ -68,18 +68,10 @@ const Home = () => {
               className='font-mainFont'
             />
           </div>
-          <div className='landing-name flex flex-nowrap p-4'>
-            <div className='headingtext font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
-              <ScrambledText
-              className='dottedom'
-              radius={60}
-              duration={1.2}
-              speed={0.5}
-              scrambleChars={":::..:"}
-              >
+          <div className='landing-name flex justify-center w-full flex-nowrap p-4'>
+            <GlowText className='headingtext flex font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
                 Seebysound
-              </ScrambledText>
-            </div>
+            </GlowText>
           </div>
         </div>
       </div>
