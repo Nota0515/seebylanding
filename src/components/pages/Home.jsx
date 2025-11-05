@@ -2,7 +2,8 @@ import { navLinks } from '@/constants'
 import PixelBlast from '../ui/PixelBast'
 import ShinyText from '../ui/shinytext';
 import LightRays from '../ui/LightRays';
-import GlowText from "@/cuicui/other/font-effects/glow-text/glow-text";
+import GlowText from "../ui/Glowtext";
+import GlossyBorder from '../ui/Lineglow';
 
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
         />
       </div>
 
-      <div style={{ width: '100%', opacity: 0.7, height: '100%', position: 'absolute', top: 0, zIndex: 0 }}>
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, zIndex: 0 }}>
         <LightRays
           raysOrigin="top-center"
           raysColor="#d0c2ff"
@@ -42,18 +43,21 @@ const Home = () => {
         <div className="flex items-center justify-center p-4 sm:px-6 lg:px-8">
           <div className='sub-nav-link max-w-full overflow-x-auto'>
             <nav className='flex justify-between items-center text-white'>
-              <div className="nav-links shiny-border flex items-center justify-between rounded-full backdrop-blur-xl drop-shadow-1 gap-2 py-2 px-4 sm:px-6 h-full font-mainFont text-sm whitespace-nowrap">
-                {navLinks.map((nav) => (
-                  <a
-                    href={nav.link}
-                    key={nav.id}
-                    className="px-2 sm:px-3 hover:text-purple-400 transition-colors text-sm"
-                  >
-                    {nav.name}
-                  </a>
-                ))}
-              </div>
-
+              <GlossyBorder className='rounded-full'
+              contentClassName='rounded-2xl p-2'
+              >
+                <div className="nav-links flex items-center justify-between rounded-full backdrop-blur-xl drop-shadow-1 gap-2 py-2 px-4 sm:px-6 h-full font-mainFont text-sm whitespace-nowrap">
+                  {navLinks.map((nav) => (
+                    <a
+                      href={nav.link}
+                      key={nav.id}
+                      className="px-2 sm:px-3 hover:text-orange-600 transition-colors text-sm"
+                    >
+                      {nav.name}
+                    </a>
+                  ))}
+                </div>
+              </GlossyBorder>
             </nav>
           </div>
         </div>
@@ -70,7 +74,7 @@ const Home = () => {
           </div>
           <div className='landing-name flex justify-center w-full flex-nowrap p-4'>
             <GlowText className='headingtext flex font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
-                Seebysound
+              Seebysound
             </GlowText>
           </div>
         </div>

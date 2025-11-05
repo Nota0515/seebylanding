@@ -1,4 +1,4 @@
-import { cn } from "@/cuicui/utils/cn";
+import { cn } from "@/utils/cn.js";
 
 export const GlowText = ({
   children,
