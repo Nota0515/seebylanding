@@ -68,14 +68,14 @@ const Home = () => {
               className='font-mainFont'
             />
           </div>
-          <div className='landing-name p-4'>
-            <div className='headingtext font-mainFont text-5xl sm:text-8xl lg:text-9xl xl:text-[12rem] text-white'>
+          <div className='landing-name flex flex-nowrap p-4'>
+            <div className='headingtext font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
               <ScrambledText
               className='dottedom'
-              radius={100}
+              radius={60}
               duration={1.2}
               speed={0.5}
-              scrambleChars={.:}
+              scrambleChars={":::..:"}
               >
                 Seebysound
               </ScrambledText>
