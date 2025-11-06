@@ -1,7 +1,7 @@
 // @ts-ignore: Allow importing CSS as a side-effect without type declarations
 import './ShinyText.css';
 
-const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
+const ShinyText = ({ text, disabled = false, speed = 5, className }) => {
   const animationDuration = `${speed}s`;
 
   return (

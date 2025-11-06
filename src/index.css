@@ -28,7 +28,7 @@
   border-radius: inherit;
   padding: 1px; /* border thickness */
   opacity: 0.6;
-  background: linear-gradient(90deg, #a38afd, #8bb0ff, #8e8dff);
+  background: linear-gradient(90deg, #cca45a, #f2f541, #f30d0d);
   background-size: 200% 200%;
   animation: border-shine 4s linear infinite;
   -webkit-mask:

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Lineglow.css";
 
-export default function ShinyBorder({ children, className = "", ...props }) {
+export default function ShinyBorder({ children, className , ...props }) {
   return (
     <div
       className={`shiny-root group relative rounded-full p-px ${className}`}

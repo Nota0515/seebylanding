@@ -4,6 +4,7 @@ import ShinyText from '../ui/shinytext';
 import LightRays from '../ui/LightRays';
 import GlowText from "../ui/Glowtext";
 import GlossyBorder from '../ui/Lineglow';
+import { GoogleGeminiEffect } from '../ui/geminiglow';
 
 
 const Home = () => {
@@ -44,7 +45,6 @@ const Home = () => {
           <div className='sub-nav-link max-w-full overflow-x-auto'>
             <nav className='flex justify-between items-center text-white'>
               <GlossyBorder className='rounded-full'
-              contentClassName='rounded-2xl p-2'
               >
                 <div className="nav-links flex items-center justify-between rounded-full backdrop-blur-xl drop-shadow-1 gap-2 py-2 px-4 sm:px-6 h-full font-mainFont text-sm whitespace-nowrap">
                   {navLinks.map((nav) => (
@@ -77,6 +77,7 @@ const Home = () => {
               Seebysound
             </GlowText>
           </div>
+          {/*<GoogleGeminiEffect />*/}
         </div>
       </div>
     </div>
