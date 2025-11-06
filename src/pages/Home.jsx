@@ -1,10 +1,10 @@
 import { navLinks } from '@/constants'
-import PixelBlast from '../ui/PixelBast'
-import ShinyText from '../ui/shinytext';
-import LightRays from '../ui/LightRays';
-import GlowText from "../ui/Glowtext";
-import GlossyBorder from '../ui/Lineglow';
-import { GoogleGeminiEffect } from '../ui/geminiglow';
+import PixelBlast from '@/components/ui/PixelBast'
+import ShinyText from '@/components/ui/shinytext';
+import LightRays from '@/components/ui/LightRays';
+import GlowText from "@/components/ui/Glowtext";
+import GlossyBorder from '@/components/ui/Lineglow';
+import { GoogleGeminiEffect } from '../components/ui/geminiglow';
 
 
 const Home = () => {
