@@ -4,6 +4,7 @@ import ShinyText from '@/components/ui/shinytext';
 import LightRays from '@/components/ui/LightRays';
 import GlowText from "@/components/ui/Glowtext";
 import GlossyBorder from '@/components/ui/Lineglow';
+import Footer from './Footer';
 
 
 
@@ -12,7 +13,7 @@ const Home = () => {
     <>
       <div className="bg-black flex flex-col justify-start mx-auto relative min-h-[100vh] overflow-hidden">
         {/*backgournd */}
-        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.2 , zIndex: 0 }}>
+        <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.2, zIndex: 0 }}>
           <PixelBlast
             variant="circle"
             pixelSize={1.3}
@@ -80,6 +81,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='w-full mt-auto'>
+        <Footer />
       </div>
     </>
   )
