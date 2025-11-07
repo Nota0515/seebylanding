@@ -31,7 +31,7 @@ export default function ShinyBorder({ children, className , ...props }) {
 
       {/* glowing rim behind the element - widened and centered to prevent one-sided blur */}
       {/*This need to be decided here */}
-      {/*<span
+      <span
         className="inset-0 absolute pointer-events-none select-none"
         style={{
           animation: "10s ease-in-out infinite alternate border-glow-translate",
@@ -46,7 +46,7 @@ export default function ShinyBorder({ children, className , ...props }) {
               "linear-gradient(135deg, #7A69F9, #F26378, #F5833F)",
           }}
         />
-      </span>*/}
+      </span>
 
       {/* content area */}
       <div
