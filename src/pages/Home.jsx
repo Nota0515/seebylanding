@@ -92,7 +92,7 @@ const Home = () => {
             </div>
             <div className='landing-name relative z-20 flex justify-center w-full flex-nowrap p-4'>
               <div 
-                className='ankala absolute bottom-3 bg-black blur-[10px]' 
+                className='ankala absolute bottom-3 bg-purple-950/20 blur-md' 
                 style={{ 
                   width: `${textWidth}px`,
                   height: '40px',
