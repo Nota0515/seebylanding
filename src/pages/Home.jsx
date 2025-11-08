@@ -5,10 +5,26 @@ import LightRays from '@/components/ui/LightRays';
 import GlowText from "@/components/ui/Glowtext";
 import GlossyBorder from '@/components/ui/Lineglow';
 import Footer from './Footer';
-
-
+import MetallicLogo from '../components/MetallicLogo';
+import { useRef, useEffect, useState } from 'react';
 
 const Home = () => {
+  const textRef = useRef(null);
+  const [textWidth, setTextWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (textRef.current) {
+        const width = textRef.current.getBoundingClientRect().width;
+        setTextWidth(width);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
   return (
     <>
       <div className="bg-black flex flex-col justify-start mx-auto relative min-h-[100vh] overflow-hidden">
@@ -65,7 +81,7 @@ const Home = () => {
           </div>
         </div>
         <div className='flex justify-center z-10 items-center mt-16'>
-          <div className='maintitlediv flex justify-center w-full items-center flex-col'>
+          <div className='maintitlediv flex relative justify-center w-full items-center flex-col'>
             <div className='flex introducing'>
               <ShinyText
                 text="Introducing 🎉"
@@ -74,10 +90,24 @@ const Home = () => {
                 className='font-mainFont'
               />
             </div>
-            <div className='landing-name flex justify-center w-full flex-nowrap p-4'>
-              <GlowText className='headingtext flex font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
-                Seebysound
-              </GlowText>
+            <div className='landing-name relative z-20 flex justify-center w-full flex-nowrap p-4'>
+              <div 
+                className='ankala absolute bottom-3 bg-black blur-[10px]' 
+                style={{ 
+                  width: `${textWidth}px`,
+                  height: '40px',
+                  left: '50%',
+                  transform: 'translateX(-50%)'
+                }}
+              ></div>
+              <div ref={textRef}>
+                <GlowText className='headingtext flex font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
+                  Seebysound
+                </GlowText>
+              </div>
+            </div>
+            <div className='absolute top-0 mt-12 w-full h-full'>
+              <MetallicLogo />
             </div>
           </div>
         </div>
