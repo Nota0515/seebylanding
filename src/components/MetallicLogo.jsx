@@ -6,7 +6,7 @@ import * as THREE from 'three';
 
 function Logo({ mousePosition }) {
     const groupref = useRef();
-    const { scene } = useGLTF('/src/assets/seebysound2.glb');
+    const { scene } = useGLTF('/src/assets/seebysound3.glb');
 
     const clonedScene = scene.clone();
 
@@ -43,7 +43,7 @@ function Logo({ mousePosition }) {
 
 return (
     <group ref={groupref}>
-        <primitive object={clonedScene} scale={2} rotation={[0, 5 , 0.4]} />
+        <primitive object={clonedScene} scale={2} rotation={[0, 5.2 , 0.3]} />
     </group>
 );
 };
@@ -100,6 +100,6 @@ const MetallicLogo = () => {
     );
 };
 
-useGLTF.preload('/src/assets/seebysound2.glb');
+useGLTF.preload('/src/assets/seebysound3.glb');
 
 export default MetallicLogo
