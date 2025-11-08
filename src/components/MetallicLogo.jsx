@@ -2,9 +2,10 @@ import React, { useRef, useEffect } from "react"
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { useGLTF, Environment, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
+import { update } from "three/examples/jsm/libs/tween.module.js";
 
 
-function Logo({ mousePosition }) {
+function Logo({ mousePosition, scale }) {
     const groupref = useRef();
     const { scene } = useGLTF('/src/assets/seebysound3.glb');
 
@@ -34,24 +35,43 @@ function Logo({ mousePosition }) {
             // Smoothly interpolate towards the target rotation
             groupref.current.rotation.y = THREE.MathUtils.lerp(
                 groupref.current.rotation.y,
-                targetRotationY ,
+                targetRotationY,
                 0.2
             );
-            groupref.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1 ;
+            groupref.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
         }
     });
 
-return (
-    <group ref={groupref}>
-        <primitive object={clonedScene} scale={2} rotation={[0, 5.2 , 0.3]} />
-    </group>
-);
+    return (
+        <group ref={groupref}>
+            <primitive object={clonedScene} scale={scale} rotation={[0, 5.2, 0.3]} />
+        </group>
+    );
 };
 
 
 const MetallicLogo = () => {
 
     const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
+    const [scale, setScale] = React.useState(2);
+
+    useEffect(() => {
+        const updateScale = () => {
+            const width = window.innerWidth;
+
+            if (width < 640) {
+                setScale(1)
+            } else if (width < 1024) {
+                setScale(1.5)
+            } else {
+                setScale(2);
+            }
+        };
+
+        updateScale();
+        window.addEventListener('resize' , updateScale);
+        return () => window.removeEventListener('resize' , updateScale);
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = (event) => {
@@ -77,7 +97,7 @@ const MetallicLogo = () => {
                 }}
             >
                 {/*we will set up the camers */}
-                <PerspectiveCamera makeDefault position={[0, 0 , 5]} fov={30} />
+                <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={30} />
                 {/*we will add lights */}
                 <ambientLight intensity={0.3} />
                 <directionalLight
@@ -94,7 +114,7 @@ const MetallicLogo = () => {
           */}
 
                 <Environment preset="sunset" background={false} />
-                <Logo mousePosition={mousePosition} />
+                <Logo mousePosition={mousePosition} scale={scale} />
             </Canvas>
         </div>
     );
