@@ -43,7 +43,7 @@ export default function ShinyBorder({ children, className , ...props }) {
           style={{
             animation: "10s ease-in-out infinite alternate border-glow-scale",
             background:
-              "linear-gradient(135deg, #7A69F9, #F26378, #F5833F)",
+              "linear-gradient(135deg, #e76c4d, #F26378, #F5833F)",
           }}
         />
       </span>
