@@ -7,7 +7,7 @@ import { update } from "three/examples/jsm/libs/tween.module.js";
 
 function Logo({ mousePosition, scale }) {
     const groupref = useRef();
-    const { scene } = useGLTF('/src/assets/seebysound3.glb');
+    const { scene } = useGLTF('/src/assets/seebysound2.glb');
 
     const clonedScene = scene.clone();
 
@@ -44,7 +44,7 @@ function Logo({ mousePosition, scale }) {
 
     return (
         <group ref={groupref}>
-            <primitive object={clonedScene} scale={scale} rotation={[0, 5.2, 0.3]} />
+            <primitive object={clonedScene} scale={scale} rotation={[0, 4.8, 0.3]} />
         </group>
     );
 };
@@ -120,6 +120,6 @@ const MetallicLogo = () => {
     );
 };
 
-useGLTF.preload('/src/assets/seebysound3.glb');
+useGLTF.preload('/src/assets/seebysound2.glb');
 
 export default MetallicLogo

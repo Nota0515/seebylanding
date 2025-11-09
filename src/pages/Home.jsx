@@ -8,6 +8,7 @@ import Footer from './Footer';
 import MetallicLogo from '../components/MetallicLogo';
 import { useRef, useEffect, useState } from 'react';
 
+
 const Home = () => {
   const textRef = useRef(null);
   const [textWidth, setTextWidth] = useState(0);
@@ -22,7 +23,7 @@ const Home = () => {
 
     updateWidth();
     window.addEventListener('resize', updateWidth);
-    
+
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
   return (
@@ -91,9 +92,9 @@ const Home = () => {
               />
             </div>
             <div className='landing-name relative z-20 flex justify-center w-full flex-nowrap p-4'>
-              <div 
-                className='ankala absolute bottom-3 bg-purple-950/20 blur-md' 
-                style={{ 
+              <div
+                className='ankala absolute bottom-3 bg-purple-950/20 blur-md'
+                style={{
                   width: `${textWidth}px`,
                   height: '40px',
                   left: '50%',
@@ -101,7 +102,7 @@ const Home = () => {
                 }}
               ></div>
               <div ref={textRef}>
-                <GlowText className='headingtext flex font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
+                <GlowText className='headingtext flex font-normal font-mainFont text-5xl sm:text-8xl lg:text-9xl text-white'>
                   Seebysound
                 </GlowText>
               </div>

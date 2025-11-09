@@ -1,0 +1,14 @@
+@keyframes wave-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(var(--wave-width) * -1)); }
+}
+
+@keyframes wave-breathe {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(1.4px); }
+  100% { transform: translateY(0); }
+}
+
+.wave-anim {
+  will-change: transform;
+}
