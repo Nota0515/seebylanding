@@ -82,8 +82,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-center z-10 items-center mt-16'>
-          <div className='maintitlediv flex relative justify-center w-full items-center flex-col'>
+        <div className='flex justify-center z-10 items-center mt-16 flex-1'>
+          <div className='maintitlediv flex relative justify-center w-full items-center flex-col h-full'>
             <div className='flex introducing'>
               <ShinyText
                 text="Introducing 🎉"
@@ -108,7 +108,7 @@ const Home = () => {
                 </GlowText>
               </div>
               <div className='text-white/80 max-w-xs sm:max-w-6xl py-1 px-4 font-mainFont shadow-xl items-center text-center font-thin backdrop-blur-sm'>
-                  <p>AI smart glasses guide the visually impaired by voice—no cane needed.</p>
+                <p>AI smart glasses guide the visually impaired by voice—no cane needed.</p>
               </div>
 
             </div>
@@ -123,21 +123,27 @@ const Home = () => {
                 </Button>
               </div>
               <div className='div-2-btn text-white font-main'>
-                <Button className="bg-gradient-to-tl from-[#c2410c] via-[#f97316] to-[#fdba74]  py-1 lg:py-2 lg:px-8" onClick={()=>{console.log("this button is clicked")}}>
+                <Button className="bg-gradient-to-tl from-[#c2410c] via-[#f97316] to-[#fdba74]  py-1 lg:py-2 lg:px-8" onClick={() => { console.log("this button is clicked") }}>
                   Learn More
                 </Button>
+              </div>
+            </div>
+            <div className='eys-text flex-grow flex w-full relative items-start py-4 px-4 md:px-8 min-h-0'>
+              <div className='paragraph-div text-white font-mainFont h-full'>
+                <p>
+                  <span>Introducing the world's first glasses that see </span>
+                  <div className=''></div>
+                  <span> for you and speak in your voice.</span>
+                </p>
+              </div>
+              <div className='image-div'>
+                
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='flex items-start justify-center'>
-        <div className='paragraph-div text-white font-mainFont'>
-          <p>
-            Introducing the world’s first glasses that see for you and speak in your voice.
-          </p>
-        </div>
-      </div>
+
     </>
   )
 }
