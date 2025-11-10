@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { update } from "three/examples/jsm/libs/tween.module.js";
 
 
-function Logo({ mousePosition, scale }) {
+function Logo({ mousePosition, scale , yPosition }) {
     const groupref = useRef();
     const { scene } = useGLTF('/src/assets/seebysound2.glb');
 
@@ -38,13 +38,13 @@ function Logo({ mousePosition, scale }) {
                 targetRotationY,
                 0.2
             );
-            groupref.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
+            groupref.current.position.y = yPosition + Math.sin(state.clock.elapsedTime * 0.07) * 0.2;
         }
     });
 
     return (
         <group ref={groupref}>
-            <primitive object={clonedScene} scale={scale} rotation={[0, 4.8, 0.3]} />
+            <primitive object={clonedScene} scale={scale}  rotation={[0, 4.8, 0.27]} />
         </group>
     );
 };
@@ -54,6 +54,7 @@ const MetallicLogo = () => {
 
     const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 });
     const [scale, setScale] = React.useState(2);
+    const [yPosition , setYPositon ] = React.useState(0);
 
     useEffect(() => {
         const updateScale = () => {
@@ -61,10 +62,13 @@ const MetallicLogo = () => {
 
             if (width < 640) {
                 setScale(1)
+                setYPositon(0.67)
             } else if (width < 1024) {
                 setScale(1.5)
+                setYPositon(0.27)
             } else {
                 setScale(2);
+                setYPositon(0)
             }
         };
 
@@ -114,7 +118,7 @@ const MetallicLogo = () => {
           */}
 
                 <Environment preset="sunset" background={false} />
-                <Logo mousePosition={mousePosition} scale={scale} />
+                <Logo mousePosition={mousePosition} scale={scale} yPosition={yPosition} />
             </Canvas>
         </div>
     );

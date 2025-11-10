@@ -18,25 +18,7 @@ export const GlowText = ({
       offsetY: 0,
       blurRadius: "calc((var(--active, 100) / 100) * 10px)",
       color: "hsl(0 0% 100% / 0.4)",
-    },
-    {
-      offsetX: 0,
-      offsetY: "calc((var(--active, 100) / 100) * 6px)",
-      blurRadius: "calc((var(--active, 100) / 100) * 15px)",
-      color: "hsl(0 0% 100% / 0.3)",
-    },
-    {
-      offsetX: 0,
-      offsetY: "calc((var(--active, 100) / 100) * 8px)",
-      blurRadius: "calc((var(--active, 100) / 100) * 20px)",
-      color: "hsl(0 0% 100% / 0.2)",
-    },
-    {
-      offsetX: 0,
-      offsetY: "calc((var(--active, 100) / 100) * 10px)",
-      blurRadius: "calc((var(--active, 100) / 100) * 30px)",
-      color: "hsl(0 0% 100% / 0.1)",
-    },
+    }
   ];
 
   // Construct the filter string by joining individual drop-shadows
@@ -49,7 +31,7 @@ export const GlowText = ({
 
   return (
     <span
-      className={cn("select-none font-medium", className)}
+      className={cn("select-none", className)}
       style={{
         ...style,
         filter: filterValue,
