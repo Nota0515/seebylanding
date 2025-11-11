@@ -131,17 +131,23 @@ const Home = () => {
             </div>
             <div className='eys-text flex w-full relative items-center py-4 px-4 min-h-0'>
               <div className='paragraph-div flex text-white font-mainFont h-full '>
-                <ScrollReveal
-                  baseOpacity={0}
-                  enableBlur={true}
-                  baseRotation={5}
-                  blurStrength={10}
-                >
-                  {`Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice.`}
-                </ScrollReveal>
+                <p className="max-w-3xl text-center">Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment.</p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Page 2 - scroll to reveal section */}
+      <div className="page2 bg-black flex items-center justify-center text-white min-h-screen py-24">
+        <div className="max-w-3xl px-6">
+          <ScrollReveal
+            baseOpacity={0}
+            enableBlur={true}
+            baseRotation={5}
+            blurStrength={10}
+          >
+            {`Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice.`}
+          </ScrollReveal>
         </div>
       </div>
     </>
