@@ -8,6 +8,7 @@ import Footer from './Footer';
 import MetallicLogo from '../components/MetallicLogo';
 import { useRef, useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
+import ScrollReveal from '@/components/ScrollReveal';
 
 
 const Home = () => {
@@ -128,22 +129,21 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className='eys-text flex-grow flex w-full relative items-start py-4 px-4 md:px-8 min-h-0'>
-              <div className='paragraph-div text-white font-mainFont h-full'>
-                <p>
-                  <span>Introducing the world's first glasses that see </span>
-                  <div className=''></div>
-                  <span> for you and speak in your voice.</span>
-                </p>
-              </div>
-              <div className='image-div'>
-                
+            <div className='eys-text flex w-full relative items-center py-4 px-4 min-h-0'>
+              <div className='paragraph-div flex text-white font-mainFont h-full '>
+                <ScrollReveal
+                  baseOpacity={0}
+                  enableBlur={true}
+                  baseRotation={5}
+                  blurStrength={10}
+                >
+                  {`Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice.`}
+                </ScrollReveal>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </>
   )
 }
