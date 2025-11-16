@@ -83,7 +83,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='flex justify-center z-10 items-center mt-16 flex-1'>
+        <div className='flex justify-center z-10 items-center flex-1'>
           <div className='maintitlediv flex relative justify-center w-full items-center flex-col h-full'>
             <div className='flex introducing'>
               <ShinyText
@@ -129,11 +129,6 @@ const Home = () => {
                 </Button>
               </div>
             </div>
-            <div className='eys-text flex w-full relative items-center py-4 px-4 min-h-0'>
-              <div className='paragraph-div flex text-white font-mainFont h-full '>
-                <p className="max-w-3xl text-center">Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment.</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -146,7 +141,7 @@ const Home = () => {
             baseRotation={5}
             blurStrength={10}
           >
-            {`Millions of people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice.`}
+            {`Millions of Blind disabled people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice via AI.`}
           </ScrollReveal>
         </div>
       </div>
