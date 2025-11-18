@@ -9,6 +9,8 @@ import MetallicLogo from '../components/MetallicLogo';
 import { useRef, useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/ScrollReveal';
+import GradualBlur from '@/components/Gradualblur';
+import Secondpage from './Secondpage';
 
 
 const Home = () => {
@@ -30,7 +32,8 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className="bg-black flex flex-col justify-start mx-auto relative min-h-[100vh] overflow-hidden">
+      <section style={{ position: 'relative', minHeight: '100vh' }}>
+        <div className="bg-black flex flex-col justify-start mx-auto relative min-h-[100vh] overflow-hidden">
         {/*backgournd */}
         <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.2, zIndex: 0 }}>
           <PixelBlast
@@ -132,19 +135,18 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* Page 2 - scroll to reveal section */}
-      <div className="page2 bg-black flex items-center justify-center text-white min-h-screen py-24">
-        <div className="max-w-3xl px-6">
-          <ScrollReveal
-            baseOpacity={0}
-            enableBlur={true}
-            baseRotation={5}
-            blurStrength={10}
-          >
-            {`Millions of Blind disabled people face daily challenges navigating the world safely. Traditional walking sticks only detect obstacles — they don’t understand the environment. Seebysound changes that — by giving vision a voice via AI.`}
-          </ScrollReveal>
-        </div>
-      </div>
+      <Secondpage />
+        <GradualBlur
+          target="parent"
+          position="bottom"
+          height="6rem"
+          strength={2}
+          divCount={5}
+          curve="bezier"
+          exponential={true}
+          opacity={1}
+        />
+      </section>
     </>
   )
 }
