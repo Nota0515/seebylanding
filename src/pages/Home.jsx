@@ -31,7 +31,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <section style={{ position: 'relative', minHeight: '100vh' }}>
+      <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
         <div className="bg-black flex flex-col justify-start mx-auto relative min-h-[100vh] overflow-hidden">
           {/*backgournd */}
           <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.2, zIndex: 0 }}>
@@ -97,7 +97,7 @@ const Home = () => {
               </div>
               <div className='landing-name-seebysound relative flex flex-col items-center justify-center w-full p-4'>
                 <div
-                  className='ankala absolute top-1/2 bg-[#92487A] blur-3xl'
+                  className='ankala absolute hidden top-1/2 bg-[#92487A] blur-3xl'
                   style={{
                     width: `${textWidth}px`,
                     height: '40px',
@@ -110,7 +110,7 @@ const Home = () => {
                     Seebysound
                   </GlowText>
                 </div>
-                <div className='text-white/80 max-w-xs sm:max-w-6xl py-1 px-4 font-mainFont shadow-xl items-center text-center font-thin backdrop-blur-sm'>
+                <div className='text-white/80 hidden sm:block tracking-tighter max-w-xs sm:max-w-6xl py-1 px-4 font-mainFont shadow-xl items-center  text-center'>
                   <p>AI smart glasses guide the visually impaired by voice—no cane needed.</p>
                 </div>
 
@@ -138,16 +138,18 @@ const Home = () => {
         <Secondpage />
         {/* This is the Third page section */}
         <Thirdpage />
-        <GradualBlur
-          target="parent"
-          position="bottom"
-          height="6rem"
-          strength={2}
-          divCount={5}
-          curve="bezier"
-          exponential={true}
-          opacity={1}
-        />
+        <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, height: '6rem', zIndex: 9999, pointerEvents: 'none' }}>
+          <GradualBlur
+            target="parent"
+            position="bottom"
+            height="6rem"
+            strength={2}
+            divCount={5}
+            curve="bezier"
+            exponential={true}
+            opacity={1}
+          />
+        </div>
       </section>
     </>
   )
