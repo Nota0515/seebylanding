@@ -8,7 +8,7 @@ import Thirdpage from './Thirdpage';
 import MetallicLogo from '../components/MetallicLogo';
 import { useRef, useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
-import GradualBlurMemo from '@/components/Gradualblur';
+import GradualBlurMemo from '@/components/GradualblurMemo';
 import Secondpage from './Secondpage';
 
 
