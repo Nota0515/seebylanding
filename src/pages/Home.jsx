@@ -8,7 +8,7 @@ import Thirdpage from './Thirdpage';
 import MetallicLogo from '../components/MetallicLogo';
 import { useRef, useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
-import GradualBlur from '@/components/Gradualblur';
+import GradualBlurMemo from '@/components/Gradualblur';
 import Secondpage from './Secondpage';
 
 
@@ -139,7 +139,7 @@ const Home = () => {
         {/* This is the Third page section */}
         <Thirdpage />
         <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, height: '6rem', zIndex: 9999, pointerEvents: 'none' }}>
-          <GradualBlur
+          <GradualBlurMemo
             target="parent"
             position="bottom"
             height="6rem"
